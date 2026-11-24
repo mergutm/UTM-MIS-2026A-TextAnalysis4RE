@@ -1,0 +1,25 @@
+services:
+  fake-news-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spanish-fake-news-detector
+    ports:
+      - "8000:8000"
+    environment:
+      - HF_HOME=/app/hf_cache
+    restart: unless-stopped
+    # Verificación automática de que el modelo cargó y la API responde
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    # Límites de memoria para evitar saturación en el servidor (BETO + PyTorch usan ~1.2GB RAM)
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
