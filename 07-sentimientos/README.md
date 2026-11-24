@@ -35,6 +35,8 @@ Es un framework web de alto rendimiento para construir APIs con Python.
 Es una interfaz gráfica e interactiva integrada automáticamente por FastAPI.
 * **Funcionamiento:** Lee los esquemas y rutas definidos en el código Python para generar una página web accesible en `http://localhost:8000/docs`. Permite visualizar los parámetros requeridos, revisar ejemplos y ejecutar peticiones HTTP reales directamente desde el navegador sin herramientas externas.
 
+![Swagger](./images/01-swagger.png)
+
 ---
 
 ## c) Generación de Peticiones (`@app.get` y `@app.post`)
@@ -71,3 +73,6 @@ Se utilizan para enviar datos estructurados (en formato JSON) hacia el servidor 
        -H "Content-Type: application/json" \
        -d '{"text": "Texto completo de la noticia a evaluar..."}'
   ```
+![Swagger](./images/02-swagger.png)
+
+
