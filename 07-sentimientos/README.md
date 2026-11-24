@@ -57,6 +57,10 @@ Se utilizan para consultar información o verificar el estado del sistema sin en
   curl -X GET "http://localhost:8000/health"
   ```
 
+![Swagger](./images/02-swagger.png)
+
+
+
 ### Peticiones POST (`@app.post`)
 Se utilizan para enviar datos estructurados (en formato JSON) hacia el servidor para que sean procesados por el modelo.
 
@@ -73,6 +77,5 @@ Se utilizan para enviar datos estructurados (en formato JSON) hacia el servidor 
        -H "Content-Type: application/json" \
        -d '{"text": "Texto completo de la noticia a evaluar..."}'
   ```
-![Swagger](./images/02-swagger.png)
 
 
